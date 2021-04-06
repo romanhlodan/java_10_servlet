@@ -31,7 +31,7 @@ public class Servlet extends HttpServlet {
         String pathInfo = request.getPathInfo();
         String replace = pathInfo.replace("/", "");
         int id = Integer.parseInt(replace);
-        User user = users.get(id);
+        User user = users.get(id-1);
         request.setAttribute("q", user);
         request.getRequestDispatcher("/pages/users.jsp").forward(request, response);
     }
